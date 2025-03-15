@@ -37,7 +37,7 @@ const Footer = () => {
           <h5 className='pb-2 text-xl font-semibold'>Contact Us</h5>
           <div>
             <h6 className='text-uppercase font-medium'>
-              Phone Number +97517712324
+              Phone Number +97577446211
             </h6>
           </div>
           <div>
