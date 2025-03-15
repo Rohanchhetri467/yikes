@@ -141,7 +141,13 @@ const OrderDetailsTable = ({
                   Paid at {formatDateTime(paidAt!).dateTime}
                 </Badge>
               ) : (
-                <Badge variant='destructive'>Not paid</Badge>
+                <>
+                  <Badge variant='destructive'>Not paid</Badge>
+                  {/* Display the red warning message */}
+                  <p className='text-red-500 text-sm mt-2'>
+                    Your payment will be verified by the admin.
+                  </p>
+                </>
               )}
             </CardContent>
           </Card>

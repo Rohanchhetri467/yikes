@@ -17,6 +17,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Copy, ArrowRight, Loader } from 'lucide-react';
 import { updateUserPaymentMethod } from '@/lib/actions/user.actions';
+import Link from 'next/link';
 
 // Schema to validate Journal Number
 const paymentSchema = z.object({
@@ -100,6 +101,18 @@ const PaymentMethodForm = ({}: { preferredPaymentMethod: string | null }) => {
               </FormItem>
             )}
           />
+
+          {/* Disclaimer Section */}
+          <div className='text-sm text-red-500 font-semibold'>
+            <span>Disclaimer! </span>
+            <span>
+              Please read our{' '}
+              <Link href='/terms' className='underline text-blue-600'>
+                terms and conditions
+              </Link>{' '}
+              before making any purchases.
+            </span>
+          </div>
 
           {/* Submit Button */}
           <div className='flex gap-2'>

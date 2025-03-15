@@ -66,17 +66,19 @@ export async function createOrder({
       };
     }
 
-    // Create order object (including journal number)
-    const order = insertOrderSchema.parse({
+    // Ensure journalNumber is passed properly
+    const orderData = {
       userId: user.id,
       shippingAddress: user.address,
       paymentMethod: user.paymentMethod,
-      journalNumber, // Ensure journal number is passed here
+      journalNumber: journalNumber || null, // Ensure journal number is passed here
       itemsPrice: cart.itemsPrice,
       shippingPrice: cart.shippingPrice,
       taxPrice: cart.taxPrice,
       totalPrice: cart.totalPrice,
-    });
+    };
+
+    const order = insertOrderSchema.parse(orderData); // Ensure the schema validates this
 
     // Create a transaction to create order and order items in the database
     const insertedOrderId = await prisma.$transaction(async (tx) => {
