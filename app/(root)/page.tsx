@@ -24,7 +24,7 @@ const Homepage = async () => {
       <div className='mb-8'>
         {' '}
         {/* Add spacing here */}
-        <ProductList data={latestProducts} title='Newest Arrivals' limit={4} />
+        <ProductList data={latestProducts} title='New Arrivals' limit={4} />
         <ViewAllProductsButton />
       </div>
 
